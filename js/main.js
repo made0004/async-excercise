@@ -40,3 +40,16 @@ function getColor() {
 function setRandomColor(color) {
     document.body.style.backgroundColor = color;
 }
+
+function appendNewMessage(message) {
+    const main = document.querySelector('main');
+    const newParagraph = document.createElement('p');
+    newParagraph.textContent = message;
+    main.appendChild(newParagraph);
+}
+    p.textContent = message;
+    main.appendChild(p);
+}
+  return new Promise((resolve, reject) => {
+    // Wait 1-2 seconds
+    const delay = getRandomInt(1000, 2000);
