@@ -36,3 +36,7 @@ function getColor() {
     }, delay);
   });
 }
+/* function to set random color */
+function setRandomColor(color) {
+    document.body.style.backgroundColor = color;
+}
