@@ -1,15 +1,14 @@
-/ Wait for the DOM to be ready
+// Wait for the DOM to be ready
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
-    document.body.addEventListener('click', handleClick);
-    // Your initialization code - click listener
-    console.log('DOM is ready. Initialization complete.');
+    // adding listener to button
+    const btn = document.querySelector('#btn-trigger');
+    btn.addEventListener('click', handleClick);
 }
 
-/**
- *  handle  click event                 
- */
 function handleClick(ev) {
-    // random number generator
+    // random number generator between 0 and 1
+    const randomNum = Math.floor(Math.random());
+
     console.log('Body was clicked!');

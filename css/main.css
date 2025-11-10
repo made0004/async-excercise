@@ -3,7 +3,7 @@
 @layer reset {
   /*
   CSS Reset
-  From Snippets.txt 
+  From Snippets.txt [cite: 50-65]
   */
 
   /* Box sizing rules */
@@ -150,9 +150,44 @@
       font-family: 'Roboto', sans-serif;
       margin: 0;
       background-color: #f4f4f4;
+      /* Add transition for the color change */
+      transition: background-color 0.5s ease;
+  }
+  
+  /* Center content */
+  main {
+    padding: 1rem;
+    max-width: 60ch;
+    margin: 0 auto;
   }
 
   h1, h2 {
     color: var(--brand-primary);
+  }
+
+  /* Added style for the new paragraphs */
+  main p {
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+  /* Button styles from Snippets.txt  */
+  .btn { 
+      display: inline-block;
+      padding: .55em 1.5em .5em;
+      background-color: #394A59;
+      border: 0.125rem solid #394A59;
+      color: #fff;
+      border-radius: .25em;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1.1rem; /* Made it a little bigger */
+      text-decoration: none;
+  }
+  .btn:hover,
+  .btn:focus-visible {
+      background-color:#59758d;
+      border-color: #59758d;
+      color: #fff;
   }
 }
