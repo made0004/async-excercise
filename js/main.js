@@ -9,6 +9,22 @@ function init() {
 
 function handleClick(ev) {
     // random number generator between 0 and 1
-    const randomNum = Math.floor(Math.random());
+    const decision = Math.round(Math.random());
 
+    if(decision === 0) {
+        // Call the color function
+        getColor()
+            .then(setRandomColor)
+            .catch(console.error);
+    } else {
+        // Call message function
+        addMessage()
+            .then(appendNewMessage)
+            .catch(console.error);
+    }
+}
+
+/
+ */
+        GetPronunciationDictionaryMetadataResponseModelPermissionOnResource()
     console.log('Body was clicked!');
