@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
+    document.body.addEventListener('click', handleClick);
     // Your initialization code - click listener
     console.log('DOM is ready. Initialization complete.');
 }
@@ -12,4 +13,3 @@ function init() {
 function handleClick(ev) {
     // random number generator
     console.log('Body was clicked!');
-    
