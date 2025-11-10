@@ -45,11 +45,10 @@ function appendNewMessage(message) {
     const main = document.querySelector('main');
     const newParagraph = document.createElement('p');
     newParagraph.textContent = message;
-    main.appendChild(newParagraph);
+    main.append(newParagraph);
 }
-    p.textContent = message;
-    main.appendChild(p);
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-  return new Promise((resolve, reject) => {
-    // Wait 1-2 seconds
-    const delay = getRandomInt(1000, 2000);
