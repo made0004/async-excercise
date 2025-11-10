@@ -24,7 +24,15 @@ function handleClick(ev) {
     }
 }
 
-/
- */
-        GetPronunciationDictionaryMetadataResponseModelPermissionOnResource()
-    console.log('Body was clicked!');
+function getColor() {
+  return new Promise((resolve, reject) => {
+    // Wait 1-2 seconds
+    const delay = getRandomInt(1000, 2000); 
+
+    setTimeout(() => {
+      // Generate random hex value
+      const hexColor = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+      resolve(hexColor);
+    }, delay);
+  });
+}
