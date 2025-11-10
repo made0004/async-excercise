@@ -1,0 +1,429 @@
+/* Using @layer structure from Snippets.txt  */
+@layer reset, layout;
+
+@layer reset {
+  /*
+  CSS Reset
+  Adapted from: https://piccalil.li/blog/a-more-modern-css-reset/
+  FOR MAD9013
+  (From Snippets.txt )
+  */
+
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Prevent font size inflation */
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    line-height: 1.5;
+  }
+
+  /* Remove default margin in favour of better control in authored CSS */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  figure,
+  blockquote,
+  ol,
+  ul,
+  dl,
+  dd {
+    margin: 0 0 1.5rem;
+  }
+
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role='list'],
+  ol[role='list'] {
+    list-style: none;
+  }
+
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  /* Set shorter line heights on headings and interactive elements */
+  h1,
+  h2,
+  h3,
+  h4,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  /* Balance text wrapping on headings */
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: #36bf7f;
+  }
+
+  a:not([class]):hover,
+  a:not([class]):focus-visible {
+    color: #d96666;
+  }
+
+  /* Make images easier to work with */
+  img,
+  picture,
+  svg {
+    max-width: 100%;
+    display: block;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  svg:not(:root) {
+    overflow: hidden;
+  }
+
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  /* Update default button cursor to indicate interactivity */
+  button {
+    cursor: pointer;
+  }
+
+  /* Make sure textareas without a rows attribute are not tiny */
+  textarea:not([rows]) {
+    min-height: 10rem;
+  }
+
+  /* Anything that has been anchored to should have extra scroll margin */
+  :target {
+    scroll-margin-block: 3rem;
+  }
+
+  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer layout {
+  
+  /* set your defaults from Snippets.txt [cite: 48, 98] */
+  :root { 
+    --brand-primary: #394a59;
+    --brand-secondary: #36bf7f;
+    /* --brand-accent: #d96666; */ /* From other snippet [cite: 1] */
+
+    /* Card variables from Snippets.txt [cite: 185] */
+    --num-cols: 1;
+    --card-w: clamp(250px, 100%, 40ch);
+    --radius: 0.5rem;
+  }
+
+  /* default font styles from Snippets.txt [cite: 49] */
+  body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+  }
+
+  /* Containers from Snippets.txt  */
+  .container { 
+    width: min(65rem, 100% - 3rem); /* Adapted from 100% and padding */
+    margin: 0 auto;
+  }
+
+  /* Section padding */
+  .banner,
+  .cards-section,
+  .image-content,
+  .blog-posts,
+  .blog-article {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  /* HEADER STYLES from Snippets.txt  */
+  .header {
+    background-color: var(--brand-primary); 
+    color: #FFFF;
+    border-top:  0.5rem solid var(--brand-secondary);
+  }
+
+  .header .container {
+    padding-top: 1rem; 
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .header__logo {
+    display: flex;
+    gap:  0.75rem;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+  }
+
+  .header__logo:hover,
+  .header__logo:focus {
+    color: var(--brand-secondary);
+  }
+
+  .header__icon {
+    width: 4rem;
+  }
+
+  .header__title {
+    font-size: 1.525rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .header__list {
+      padding-left: 0;
+      margin: 0;
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem; 
+  }
+
+  .header__link {
+    color: white; 
+    text-decoration: none;
+  }
+
+  .header__link:hover,
+  .header__link:focus {
+    color: var(--brand-secondary); 
+  }
+
+  @media only screen and (min-width: 45em) {
+    .header .container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header__list {
+      flex-direction: row; 
+      gap: 1.2rem;
+    }
+  }
+  /* END HEADER STYLES */
+
+  /* Button styles from Snippets.txt [cite: 101-105] */
+  .btn { 
+      display: inline-block;
+      padding: .55em 1.5em .5em;
+      background-color: #394A59;
+      border: 0.125rem solid #394A59;
+      color: #fff;
+      border-radius: .25em;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: inherit;
+      text-decoration: none;
+  }
+  .btn:hover,
+  .btn:focus-visible {
+      background-color:#59758d;
+      border-color: #59758d;
+      color: #fff;
+  }
+  /* END BUTTON STYLES */
+
+  /* CARD STYLES from Snippets.txt [cite: 189-191] */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    gap: 1rem;
+    justify-content: center; /* Adapted from snippet */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  .card {
+    border: 1px solid #d4d4d4; /* Adapted from var(--dark) */
+    border-radius: var(--radius);
+    padding: 1rem;
+    width: var(--card-w);
+    background-color: #fff; /* Adapted from var(--light) */
+    margin: 0 auto; /* Center cards when 1-col */
+  }
+  .card__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .card__content {
+    margin-bottom: 1rem;
+  }
+
+  @media (width > 40em) {
+    :root {
+      --num-cols: 2;
+    }
+  }
+  @media (width > 60em) {
+    :root {
+      --num-cols: 3;
+    }
+  }
+  /* END CARD STYLES */
+
+  /* IMAGE-CONTENT STYLES from Snippets.txt [cite: 111, 107] */
+  .image-content .container {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+  }
+  .image-content__image img {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Added for consistent image shape */
+    border-radius: var(--radius);
+  }
+
+  @media only screen and (min-width: 45em) {
+      .image-content .container { 
+          grid-template-columns: 1fr 2fr;
+      }
+  }
+  /* END IMAGE-CONTENT STYLES */
+
+  /* BLOG POSTS SECTION */
+  .blog-posts {
+    background-color: #fff;
+  }
+  .blog-post-summary {
+    border-bottom: 1px solid #d4d4d4;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+  .blog-post-summary:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .blog-post-summary h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+  .blog-post-summary p {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
+  /* BLOG ARTICLE PAGE */
+  .blog-article .container {
+    max-width: 50em; /* Good for reading */
+  }
+  .blog-article__header {
+    border-bottom: 1px solid #d4d4d4;
+    margin-bottom: 2rem;
+  }
+  .blog-article__header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+  .blog-article__tags ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .blog-article__tags li {
+    background-color: var(--brand-secondary);
+    color: var(--brand-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+
+  /* Call Out Style  */
+  .call-out {
+    background-color: #fff;
+    border: 2px solid var(--brand-secondary);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  .call-out h2 {
+    color: var(--brand-primary);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-article__content h2 {
+    font-size: 1.75rem;
+    margin-top: 2rem;
+  }
+  .blog-article__content h3 {
+    font-size: 1.4rem;
+    color: var(--brand-primary);
+    margin-top: 1.5rem;
+  }
+
+  /* FOOTER STYLES */
+  .footer {
+    background-color: var(--brand-primary);
+    color: #fff;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+  .footer .header__list {
+    flex-direction: column;
+  }
+  .footer__main {
+    display: grid;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--brand-secondary);
+  }
+  .footer__legal {
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  @media (min-width: 45em) {
+    .footer__main {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  /* END FOOTER STYLES */
+
+}
