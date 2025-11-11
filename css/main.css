@@ -150,19 +150,20 @@
       /* This is the Roboto font from snippets! */
       font-family: 'Roboto', sans-serif;
       margin: 0;
-      background-color: #f4f4f4;
+      background-color: #59758d;
       transition: background-color 0.5s ease;
   }
   
   /* Center content */
-  main {
+  main p {
     padding: 1rem;
     max-width: 60ch;
     margin: 0 auto;
   }
 
   h1, h2 {
-    color: var(--brand-primary);
+    color: gray;
+    text-align: center;
   }
 
   /* Style for the new paragraphs */
@@ -171,18 +172,19 @@
     color: #333;
   }
 
-  /* This is what, like, centers the button! */
+ /* button centered container */
   .btn-container {
     text-align: center;
     margin-top: 2rem;
+    
   }
 
-  /* These are the styles from Snippets.txt!  */
+
   .btn { 
       display: inline-block;
       padding: .55em 1.5em .5em;
-      background-color: var(--brand-primary);
-      border: 0.125rem solid var(--brand-primary);
+      background-color: #59758d;
+      border: 0.125rem solid black
       color: #fff;
       border-radius: .25em;
       cursor: pointer;
