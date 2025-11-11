@@ -147,10 +147,10 @@
 
   /* default font styles from Snippets.txt */
   body {
+      /* This is the Roboto font from snippets! */
       font-family: 'Roboto', sans-serif;
       margin: 0;
       background-color: #f4f4f4;
-      /* Add transition for the color change */
       transition: background-color 0.5s ease;
   }
   
@@ -165,29 +165,38 @@
     color: var(--brand-primary);
   }
 
-  /* Added style for the new paragraphs */
+  /* Style for the new paragraphs */
   main p {
     font-size: 1.1rem;
     color: #333;
   }
 
-  /* Button styles from Snippets.txt  */
+  /* This is what, like, centers the button! */
+  .btn-container {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  /* These are the styles from Snippets.txt!  */
   .btn { 
       display: inline-block;
       padding: .55em 1.5em .5em;
-      background-color: #394A59;
-      border: 0.125rem solid #394A59;
+      background-color: var(--brand-primary);
+      border: 0.125rem solid var(--brand-primary);
       color: #fff;
       border-radius: .25em;
       cursor: pointer;
       font-family: inherit;
-      font-size: 1.1rem; /* Made it a little bigger */
+      font-size: 1.1rem; 
       text-decoration: none;
+      transition: all 0.2s ease-out; 
   }
   .btn:hover,
   .btn:focus-visible {
       background-color:#59758d;
       border-color: #59758d;
       color: #fff;
+      transform: translateY(-2px); 
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
   }
 }
