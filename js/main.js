@@ -41,6 +41,19 @@ function setRandomColor(color) {
     document.body.style.backgroundColor = color;
 }
 
+/* function to  */
+function addMessage() {
+  return new Promise((resolve, reject) => {
+    // Wait 1-2 seconds
+    const delay = getRandomInt(1000, 2000);
+  
+    setTimeout(() => {
+      const messages = `A new message appeared after ${delay} milliseconds!`;
+      resolve(messages);
+    }, delay);
+  });
+}
+
 function appendNewMessage(message) {
     const main = document.querySelector('main');
     const newParagraph = document.createElement('p');
